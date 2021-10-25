@@ -1,0 +1,26 @@
+{
+  "name": "business-activity-visualiser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joeledwardson/business-activity-visualiser.git"
+  },
+  "keywords": [],
+  "author": "Joel Edwardson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joeledwardson/business-activity-visualiser/issues"
+  },
+  "homepage": "https://github.com/joeledwardson/business-activity-visualiser#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "md5": "^2.3.0",
+    "sqlite3": "^5.0.2"
+  }
+}
