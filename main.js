@@ -16,8 +16,9 @@ app.get("/", (req, res, next) => {
 });
 
 // Insert here other API endpoints
-app.get("/api/users", (req, res, next) => {
-  var sql = "select * from tableinfo";
+app.post("/api/geocodes", (req, res, next) => {
+  console.log(req.body);
+  var sql = 'select * from geodata';
   var params = [];
   db.all(sql, params, (err, rows) => {
     if (err) {
@@ -26,7 +27,10 @@ app.get("/api/users", (req, res, next) => {
     }
     res.json({
         "message":"success",
-        "data":rows
+        "data": rows.map(row => ({
+          index: row.index,
+          data: JSON.parse(row.data)
+        }))
     })
   });
 })
