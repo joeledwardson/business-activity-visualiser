@@ -25,6 +25,14 @@
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}\\main.js"
+        },
+        {
+            "name": "launch via nodemon",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "nodemon",
+            "program": "${workspaceFolder}/main.js",
+            "console": "integratedTerminal"
         }
     ]
 }
