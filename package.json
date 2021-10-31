@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/joeledwardson/business-activity-visualiser#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "md5": "^2.3.0",
     "nodemon": "^2.0.14",
