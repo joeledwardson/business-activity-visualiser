@@ -39,7 +39,7 @@ app.use(bodyParser.json());
 
 
 // Start server
-app.listen(process.env.HTTP_PORT, () => {
+app.listen(process.env.PORT | process.env.TEST_PORT, () => {
   console.log("Server running on port %PORT%".replace("%PORT%", process.env.HTTP_PORT));
 });
 // Root endpoint
