@@ -39,8 +39,9 @@ app.use(bodyParser.json());
 
 
 // Start server
-app.listen(process.env.PORT || process.env.TEST_PORT, () => {
-  console.log("Server running on port %PORT%".replace("%PORT%", process.env.HTTP_PORT));
+var port = process.env.PORT || process.env.TEST_PORT;
+app.listen(port, () => {
+  console.log("Server running on port %PORT%".replace("%PORT%", port));
 });
 // Root endpoint
 app.get("/", (req, res, next) => {
