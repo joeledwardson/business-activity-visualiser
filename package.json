@@ -1,7 +1,7 @@
 {
   "name": "business-activity-visualiser",
   "version": "1.0.0",
-  "description": "",
+  "description": "Visualisation of business activity units across the UK 2021",
   "main": "index.js",
   "scripts": {
     "start": "node main.js",
@@ -20,6 +20,7 @@
   "homepage": "https://github.com/joeledwardson/business-activity-visualiser#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "md5": "^2.3.0",
     "nodemon": "^2.0.14",
@@ -27,6 +28,6 @@
     "sqlite3": "^5.0.2"
   },
   "engines": {
-    "node": "14.x"
+    "node": "17.x"
   }
 }

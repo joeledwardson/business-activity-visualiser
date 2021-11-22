@@ -37,7 +37,7 @@ The root project entry point is `main.js`, a node server providing an API to the
 
 **requests**
 
-Requests are accepted in `post`  format with:
+Requests are accepted in `post`  format to `<host URL>:8000/api/geocodes` with:
 
 - `level` as an integer, between 1 and 7
 
