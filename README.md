@@ -1,14 +1,11 @@
 # Business Activity Visualiser (backend)
 
-Backend of business activity visualiser. 
+Backend of business activity visualiser, [see demo deployed here](https://business-activity-visualiser.herokuapp.com/)
 
-Back-nd API is served together with the frontend (cloned and built in Heroku build-pack)
+Back-end API is served together with the frontend 
 
-- available here: https://business-activity-visualiser.herokuapp.com/ 
-
-Frontend repository: https://github.com/syedtaqi95/business-activity-frontend.
-
-> [Heroku shell buildpack](https://github.com/niteoweb/heroku-buildpack-shell) used to clone frontend repository in build process to serve, see `.heroku/run.sh`
+- frontend [repository available here](https://github.com/syedtaqi95/business-activity-frontend)
+- [Heroku shell buildpack](https://github.com/niteoweb/heroku-buildpack-shell) used to clone frontend repository in build process to serve, see `.heroku/run.sh`
 
 <img src="https://i.imgur.com/OUafG0I.png"/>
 
