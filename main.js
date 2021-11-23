@@ -24,16 +24,16 @@
 // Create express app
 require('dotenv').config();
 var express = require("express");
-var app = express();
-var db = require("./database.js");
-
 var cors = require("cors");
-app.use(cors());
+var path = require("path");
+var bodyParser = require("body-parser");
+var db = require("./database.js");
+var app = express();
 
-const path = require("path");
+app.options('/api/geocodes', cors());
+
 app.use(express.static(path.join(__dirname, "build")));
 
-var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
