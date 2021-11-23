@@ -50,7 +50,6 @@ app.get("/", (req, res, next) => {
 
 // Insert here other API endpoints
 app.post("/api/geocodes", (req, res, next) => {
-  console.log(req.body);
   if (!Number.isInteger(req.body.level)) {
     res.status(400).json({ error: 'expected "level" to be an integer' });
     return;
@@ -112,6 +111,7 @@ app.post("/api/geocodes", (req, res, next) => {
     };
 
     setProperties(0);
+    console.log(`resolved request at level ${req.body.level}`);
   });
 });
 
