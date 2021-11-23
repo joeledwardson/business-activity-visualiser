@@ -114,8 +114,3 @@ app.post("/api/geocodes", (req, res, next) => {
     console.log(`resolved request at level ${req.body.level}`);
   });
 });
-
-// Default response for any other request
-app.use(function (req, res) {
-  res.status(404);
-});
