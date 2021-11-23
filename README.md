@@ -1,6 +1,14 @@
 # Business Activity Visualiser (backend)
 
-Back-end of business activity visualiser. Front-end repository: https://github.com/syedtaqi95/business-activity-frontend.
+Backend of business activity visualiser. 
+
+Back-nd API is served together with the frontend (cloned and built in Heroku build-pack)
+
+- available here: https://business-activity-visualiser.herokuapp.com/ 
+
+Frontend repository: https://github.com/syedtaqi95/business-activity-frontend.
+
+> [Heroku shell buildpack](https://github.com/niteoweb/heroku-buildpack-shell) used to clone frontend repository in build process to serve, see `.heroku/run.sh`
 
 <img src="https://i.imgur.com/OUafG0I.png"/>
 
@@ -15,7 +23,7 @@ The excel file holding the data downloaded is `data/ukbusinessworkbook2021.xlsx`
 The Jupyter notebooks do the following:
 
 - `data/datageography.ipynb` retrieves and processes ONS geographical data for each region
--  `data/datasheets.ipynb` retrives and processes data from each sheet in the excel workbook identified above.
+-  `data/datasheets.ipynb` retrieves and processes data from each sheet in the excel workbook identified above.
 
 The result of both notebooks is producing `data/businessdatabase2.db`, an SQLite database holding the parsed data from the workbook, and geoJSON data for each geographical entity.
 
@@ -33,7 +41,7 @@ Because the spreadsheet geographical codes are a mix of countries, counties and 
 
 ## Server
 
-The root project entry point is `main.js`, a node server providing an API to the front-end to retrieve numeric and geoJSON data from `data/businessdatabase2.db`.
+The root project entry point is `main.js`, a node server providing an API to the frontend to retrieve numeric and geoJSON data from `data/businessdatabase2.db` (and frontend React application.)
 
 **requests**
 
@@ -50,10 +58,18 @@ or and object:
 - `message`: "success"
 - `data`: a geoJSON `FeatureCollection` of each geographical entity at that level, for each feature the `properties` attribute has keys of industry group from table 1 and the value is the summation for that geographical area
 
+## Querying
+
+To view the frontend complete deployed application, navigate to: https://business-activity-visualiser.herokuapp.com/
+
+To access the underlying API, can use the `/api/geocodes` URL:
+
+<img src="https://i.imgur.com/fM1JSRR.png" style="height:50%;width:50%;float:left"/>
+
 # Future Work
 
 At the moment the server is hard coded to use table 1, whereas the database contains data from all 26 tables presented in the spreadsheet. 
 
-Some tables do not have geographical information so rendering on a map would be futile, but for the other tables that do a front-end selector could be created.
+Some tables do not have geographical information so rendering on a map would be futile, but for the other tables that do a frontend selector could be created.
 
-However, the geographical information is sometimes in the sheet rows and sometimes in column headers, so this would need to be indicated to the front-end.
+However, the geographical information is sometimes in the sheet rows and sometimes in column headers, so this would need to be indicated to the frontend.
