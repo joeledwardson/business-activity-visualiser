@@ -30,9 +30,9 @@ var bodyParser = require("body-parser");
 var db = require("./database.js");
 var app = express();
 
+var BUILD_DIR = 'business-activity-frontend/build';
 app.options('*', cors()) // include before other routes
-
-app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, BUILD_DIR)));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -45,7 +45,7 @@ app.listen(port, () => {
 });
 // Root endpoint
 app.get("/", (req, res, next) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+  res.sendFile(path.join(__dirname, BUILD_DIR, "index.html"));
 });
 
 // Insert here other API endpoints
