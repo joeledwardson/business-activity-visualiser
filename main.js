@@ -30,7 +30,7 @@ var bodyParser = require("body-parser");
 var db = require("./database.js");
 var app = express();
 
-app.options('/api/geocodes', cors());
+app.options('*', cors()) // include before other routes
 
 app.use(express.static(path.join(__dirname, "build")));
 
