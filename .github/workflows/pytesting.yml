@@ -5,31 +5,24 @@ on: push
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  initialiser:
-    name: environment initialiser
+  pytester:
+    name: running pytest
     runs-on: ubuntu-latest
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      
-      - name: go to directory
-        run: cd data
-      
+
       - name: install poetry
         run: curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python -
 
       - name: add poetry to path
         run: export PATH=$PATH:$HOME/.local/bin
-      
+    
+      - name: go to directory
+        run: cd data
+
       - name: initialise poetry
         run: poetry install
-      
-  tester:
-    name: run pytest
-    runs-on: ubuntu-latest
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
       
       # Setup Python (faster than using Python container)
       - name: Setup Python
