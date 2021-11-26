@@ -18,6 +18,7 @@ plotly = "^5.3.1"
 tqdm = "^4.62.3"
 xlrd = "^2.0.1"
 pytest = "^6.2.5"
+setuptools = "^59.2.0"
 
 [tool.poetry.dev-dependencies]
 
