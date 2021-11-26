@@ -19,10 +19,14 @@ jobs:
         run: export PATH=$PATH:$HOME/.local/bin
     
       - name: go to directory
-        run: cd data
+        run: |
+          cd data
+          pwd
 
       - name: initialise poetry
-        run: poetry install
+        run: |
+          pwd
+          poetry install
       
       # Setup Python (faster than using Python container)
       - name: Setup Python
