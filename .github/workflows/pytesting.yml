@@ -1,0 +1,36 @@
+# This is a basic workflow to help you get started with Actions
+
+name: PyTest
+on:push
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  initialiser:
+    name: environment initialiser
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      
+      - name: go to directory
+      run: cd data
+      
+      -name: initialise poetry
+      run: poetry install
+      
+  tester:
+    name: run pytest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      
+      - name: files info
+      run: |
+        echo list of files:
+        ls
+        echo directory:
+        pwd
+  
+      
+      - name: run pytest
+      run: pytest -v
+      
