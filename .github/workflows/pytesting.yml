@@ -12,36 +12,22 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: install poetry
-        run: curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python -
-
-      - name: add poetry to path
-        run: export PATH=$PATH:$HOME/.local/bin
-    
-      - name: go to directory
-        run: |
-          cd data
-          pwd
-
-      - name: initialise poetry
-        run: |
-          pwd
-          poetry install
-      
       # Setup Python (faster than using Python container)
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
           python-version: "3.x"
-      
-      - name: files info
+
+      - name: install poetry
+        run: curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python -
+
+      - name: add poetry to path
+        run: export PATH=$PATH:$HOME/.local/bin
+
+      - name: run pytest in poetry env
         run: |
-          echo list of files:
-          ls
-          echo directory:
-          pwd
-  
-      
-      - name: run pytest
-        run: pytest -v
+          cd data
+          poetry install
+          poetry run pytest -v
+          
       
