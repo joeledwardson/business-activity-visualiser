@@ -31,7 +31,7 @@ var db = require("./database.js");
 var app = express();
 
 var BUILD_DIR = 'business-activity-frontend/build';
-app.options('*', cors()) // include before other routes
+app.use(cors())
 app.use(express.static(path.join(__dirname, BUILD_DIR)));
 
 app.use(bodyParser.urlencoded({ extended: false }));
