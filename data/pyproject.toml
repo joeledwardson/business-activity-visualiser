@@ -19,6 +19,7 @@ tqdm = "^4.62.3"
 xlrd = "^2.0.1"
 pytest = "^6.2.5"
 setuptools = "^59.2.0"
+ipytree = "^0.2.1"
 
 [tool.poetry.dev-dependencies]
 
