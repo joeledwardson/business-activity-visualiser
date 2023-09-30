@@ -1,6 +1,6 @@
 # Business Activity Visualiser (backend)
 
-Backend of business activity visualiser, [see demo deployed here](https://business-activity-visualiser.herokuapp.com/)
+Backend of business activity visualiser
 
 Back-end API is served together with the frontend 
 
