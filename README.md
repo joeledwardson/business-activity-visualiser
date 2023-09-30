@@ -1,6 +1,6 @@
 # Business Activity Visualiser (backend)
 
-Backend of business activity visualiser
+Backend of business activity visualiser, [see demo deployed here](business-activity-visualiser.vercel.app)
 
 Back-end API is served together with the frontend 
 
